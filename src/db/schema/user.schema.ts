@@ -15,6 +15,7 @@ export const UserTable = t.pgTable(
     lastName: t.varchar('last_name', { length: 255 }).notNull(),
     status: userStatus('status').notNull().default('user'),
     imageUrl: t.varchar('image_url', { length: 255 }).notNull(),
+    isActive: t.boolean('is_active').notNull().default(true),
     ...timestamp,
   },
   (table) => [
